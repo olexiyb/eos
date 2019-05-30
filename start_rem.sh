@@ -27,3 +27,15 @@ build/bin/cleos --wallet-url http://127.0.0.1:8899 set contract eosio eosio.cont
 
 build/bin/cleos system listproducers
 
+# ./build/bin/cleos create key --to-console
+# Private key: 5KCya6rGfn7RExWZ4Ks6ouBW8UyenhjpU2uci5tWSxbEeeRFFQ9
+# Public key: EOS8LcuijU7fjX8aon1b6fPxGWoPxHVSznz5wqEAb3DDXn5kwMEEx
+./build/bin/cleos -n --wallet-url http://127.0.0.1:8899 wallet import --private-key 5KCya6rGfn7RExWZ4Ks6ouBW8UyenhjpU2uci5tWSxbEeeRFFQ9
+
+./build/bin/cleos create account eosio eosio.token EOS8LcuijU7fjX8aon1b6fPxGWoPxHVSznz5wqEAb3DDXn5kwMEEx
+
+./build/bin/cleos get account eosio.token
+
+build/bin/cleos --wallet-url http://127.0.0.1:8899 set contract eosio.token eosio.contracts/contracts/eosio.token/src/ eosio.token.wasm eosio.token.abi
+
+
